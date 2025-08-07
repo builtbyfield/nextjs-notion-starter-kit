@@ -1,0 +1,167 @@
+/* Site-specific styles */
+
+:root {
+    --notion-gray_background_co: hsla(210, 5%, 87%, 0.3);
+}
+
+/* General styles */
+.notion-page {
+    --page-width-lg: 960px;
+    --page-width-md: 720px;
+    --page-width-sm: 540px;
+    --page-width-xs: 480px;
+    --page-margin: calc(min(40px, 8vw));
+    
+    --notion-max-width: calc(var(--page-width-lg) + (var(--page-margin) * 2));
+
+    padding-inline: var(--page-margin);
+}
+
+@media only screen and (max-width: 920px) {
+  .index-page.notion-page {
+    padding-inline: var(--page-margin);
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .notion-page {
+    padding-inline: var(--page-margin);
+  }
+}
+
+/* Inner page content */
+.notion-page-content-inner {
+    font-size: 18px;
+    text-align: center;
+    text-wrap: pretty;
+}
+
+/* Row and column content */
+.notion-row {
+    justify-content: center;
+    text-align: left;
+}
+
+/* Blank - empty blocks - we don't want these to be selectable */
+.notion-blank {
+    user-select: none;
+}
+
+/* Headings */
+.notion-h {
+    max-width: var(--page-width-sm);
+    margin-inline: auto;
+    font-weight: 600;
+    text-wrap: balance;
+}
+
+.notion-h1 {
+    max-width: var(--page-width-lg);
+}
+
+/* Text */
+.notion-text {
+    max-width: var(--page-width-sm);
+    margin-inline: auto;
+    font-weight: 500;
+    text-wrap: balance;
+}
+
+/* To-dos */
+.notion-to-do {
+    --to-do-size: 24px;
+    --to-do-offset: 3px;
+    --to-do-icon-size: 13px;
+    --to-do-margin: 8px;
+
+    max-width: var(--page-width-sm);
+    margin-inline: auto;
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.notion-to-do-item {
+    align-items: flex-start;
+}
+
+.notion-property-checkbox {
+    margin-top: var(--to-do-offset);
+    margin-right: var(--to-do-margin);
+}
+
+.notion-property-checkbox,
+.notion-property-checkbox-checked,
+.notion-property-checkbox-unchecked {
+    width: var(--to-do-size);
+    height: var(--to-do-size);
+}
+
+.notion-property-checkbox-checked,
+.notion-property-checkbox-unchecked {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+}
+
+.notion-property-checkbox-unchecked {
+    border-color: var(--notion-gray);
+}
+
+.notion-property-checkbox-checked {
+    background-color: #28C840;
+
+    & svg {
+        position: static;
+        width: var(--to-do-icon-size);
+        height: var(--to-do-icon-size);
+    }
+}
+
+.notion-to-do-body {
+    font-size: 1.25em;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.notion-to-do-children {
+    padding-left: calc(var(--to-do-size) + var(--to-do-margin));
+
+    & .notion-text {
+        max-width: none;
+        margin-top: 0;
+        margin-inline: 0;
+        text-wrap: pretty;
+    }
+}
+
+/* Lists */
+.notion-list {
+    max-width: var(--page-width-sm);
+    margin-inline: auto;
+    text-align: left;
+}
+
+/* Callout */
+.notion-callout {
+    max-width: var(--page-width-sm);
+    margin-inline: auto;
+    padding-top: 24px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 16px;
+    border: none;
+    border-radius: 20px;
+
+    &.notion-default_background_co {
+        border: 1px solid var(--fg-color-0);
+    }
+}
+
+/* Asset caption */
+.notion-asset-caption {
+    font-size: 0.67em;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+}
