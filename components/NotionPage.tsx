@@ -307,7 +307,8 @@ export function NotionPage({
           styles.notion,
           pageId === site.rootNotionPageId && 'index-page'
         )}
-        darkMode={isDarkMode}
+        // darkMode={isDarkMode}
+        darkMode={false} // disable dark mode for now
         components={components}
         recordMap={recordMap}
         rootPageId={site.rootNotionPageId}
